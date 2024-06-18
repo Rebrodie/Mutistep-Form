@@ -3,17 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
     <div class="flex-container wrapper">
+      <!-- Sidebar start -->
       <header>
         <nav class="flex-container">
           <div class="flex-container">
@@ -21,7 +15,7 @@
               <h2>Step 1</h2>
               <h1>Your info</h1>
             </label>
-            <button class="page-buttons buttons" id="active" name="page-one">
+            <button class="page-buttons buttons"  name="page-one">
               1
             </button>
           </div>
@@ -30,7 +24,7 @@
               <h2>Step 2</h2>
               <h1>Select plan</h1>
             </label>
-            <button class="page-buttons buttons" name="page-two">2</button>
+            <button class="page-buttons buttons" id="active" name="page-two">2</button>
           </div>
           <div class="flex-container">
             <label for="page-three" class="hidden">
@@ -58,37 +52,11 @@
           alt="illustration.png"
         />
       </header>
+      <!-- Sidebar end -->
       <main>
-        <form action="#" class="flex-container">
-          <div class="form-head">
-            <h1>Personal info</h1>
-            <p>Please provide your name, email address, and phone number.</p>
-          </div>
-          <div class="form-body">
-            <label for="Name" class="form-label">Name</label>
-            <input type="text" name="Name" placeholder="e.g. Stephen King" />
-            <label for="Email" class="form-label">Email Address</label>
-            <input
-              type="email"
-              name="Email"
-              placeholder="e.g. stephenking@lorem.com"
-            />
-            <label for="Number" class="form-label">Phone Number</label>
-            <input
-              type="text"
-              name="Number"
-              placeholder="e.g. +1 234 567 890"
-            />
-          </div>
-        </form>
+        Select your plan You have the option of monthly or yearly billing. Arcade
+      $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
       </main>
       <button type="button" class="buttons">Next Step</button>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Malik Bennett</a>.
-      </div>
-    </div>
   </body>
 </html>

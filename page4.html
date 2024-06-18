@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <header>
+      <nav class="flex-container">
+        <div class="flex-container">
+          <label for="page-one" class="hidden">
+            <h2>Step 1</h2>
+            <h1>Your info</h1>
+          </label>
+          <button class="page-buttons buttons" name="page-one">1</button>
+        </div>
+        <div class="flex-container">
+          <label for="page-two" class="hidden">
+            <h2>Step 2</h2>
+            <h1>Select plan</h1>
+          </label>
+          <button class="page-buttons buttons" id="active" name="page-two">
+            2
+          </button>
+        </div>
+        <div class="flex-container">
+          <label for="page-three" class="hidden">
+            <h2>Step 3</h2>
+            <h1>Add-ons</h1>
+          </label>
+          <button class="page-buttons buttons" name="page-three">3</button>
+        </div>
+        <div class="flex-container">
+          <label for="page-four" class="hidden">
+            <h2>Step 4</h2>
+            <h1>Summary</h1></label
+          >
+          <button class="page-buttons buttons" name="page-four">4</button>
+        </div>
+      </nav>
+      <img
+        srcset="
+          ./assets/images/bg-sidebar-mobile.svg  375w,
+          ./assets/images/bg-sidebar-desktop.svg 274w
+        "
+        sizes="(max-width: 600px) 375px,274px
+          "
+        src="./assets/images/bg-sidebar-desktop.svg"
+        alt="illustration.png"
+      />
+    </header>
+    <!-- Sidebar end -->
+    <main>
+      Finishing up Double-check everything looks OK before confirming.
+
+      <!-- Dynamically add subscription and add-on selections here -->
+
+      Total (per month/year) Go Back Confirm
+    </main>
+    <section class="hidden">
+      Thank you! Thanks for confirming your subscription! We hope you have fun
+      using our platform. If you ever need support, please feel free to email us
+      at support@loremgaming.com.
+    </section>
+    <button type="button" class="buttons">Next Step</button>
+  </body>
+</html>

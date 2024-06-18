@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <header>
+      <nav class="flex-container">
+        <div class="flex-container">
+          <label for="page-one" class="hidden">
+            <h2>Step 1</h2>
+            <h1>Your info</h1>
+          </label>
+          <button class="page-buttons buttons" name="page-one">1</button>
+        </div>
+        <div class="flex-container">
+          <label for="page-two" class="hidden">
+            <h2>Step 2</h2>
+            <h1>Select plan</h1>
+          </label>
+          <button class="page-buttons buttons" id="active" name="page-two">
+            2
+          </button>
+        </div>
+        <div class="flex-container">
+          <label for="page-three" class="hidden">
+            <h2>Step 3</h2>
+            <h1>Add-ons</h1>
+          </label>
+          <button class="page-buttons buttons" name="page-three">3</button>
+        </div>
+        <div class="flex-container">
+          <label for="page-four" class="hidden">
+            <h2>Step 4</h2>
+            <h1>Summary</h1></label
+          >
+          <button class="page-buttons buttons" name="page-four">4</button>
+        </div>
+      </nav>
+      <img
+        srcset="
+          ./assets/images/bg-sidebar-mobile.svg  375w,
+          ./assets/images/bg-sidebar-desktop.svg 274w
+        "
+        sizes="(max-width: 600px) 375px,274px
+          "
+        src="./assets/images/bg-sidebar-desktop.svg"
+        alt="illustration.png"
+      />
+    </header>
+    <!-- Sidebar end -->
+    <main>
+      Pick add-ons Add-ons help enhance your gaming experience. Online service
+      Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
+      +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back
+    </main>
+    <button type="button" class="buttons">Next Step</button>
+  </body>
+</html>
