@@ -6,39 +6,38 @@
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
-    <div class="flex-container wrapper">
-      <!-- Sidebar start -->
+    <div class="flex wrapper">
       <header>
-        <nav class="flex-container">
-          <div class="flex-container">
-            <label for="page-one" class="hidden">
+        <nav class="flex">
+          <div class="flex">
+            <label for="pg-one" class="hidden">
               <h2>Step 1</h2>
               <h1>Your info</h1>
             </label>
-            <button class="page-buttons buttons"  name="page-one">
-              1
-            </button>
+            <button class="pg-btn btn" name="pg-one">1</button>
           </div>
-          <div class="flex-container">
-            <label for="page-two" class="hidden">
+          <div class="flex">
+            <label for="pg-two" class="hidden">
               <h2>Step 2</h2>
               <h1>Select plan</h1>
             </label>
-            <button class="page-buttons buttons" id="active" name="page-two">2</button>
+            <button class="pg-btn btn" id="active" name="pg-two">
+              2
+            </button>
           </div>
-          <div class="flex-container">
-            <label for="page-three" class="hidden">
+          <div class="flex">
+            <label for="pg-three" class="hidden">
               <h2>Step 3</h2>
               <h1>Add-ons</h1>
             </label>
-            <button class="page-buttons buttons" name="page-three">3</button>
+            <button class="pg-btn btn" name="pg-three">3</button>
           </div>
-          <div class="flex-container">
-            <label for="page-four" class="hidden">
+          <div class="flex">
+            <label for="pg-four" class="hidden">
               <h2>Step 4</h2>
               <h1>Summary</h1></label
             >
-            <button class="page-buttons buttons" name="page-four">4</button>
+            <button class="pg-btn btn" name="pg-four">4</button>
           </div>
         </nav>
         <img
@@ -52,11 +51,36 @@
           alt="illustration.png"
         />
       </header>
-      <!-- Sidebar end -->
-      <main>
-        Select your plan You have the option of monthly or yearly billing. Arcade
-      $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
+      <main class="flex">
+        <h1>Select your plan</h1>
+        <h2>You have the option of monthly or yearly billing.</h2>
+        <button type="button" class="btn">
+          <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
+          Arcade $9/mo
+        </button>
+        <button type="button" class="btn">
+          <img src="./assets/images/icon-advanced.svg" alt="Advanced" />
+          Advanced $12/mo
+        </button>
+        <button type="button" class="btn">
+          <img src="./assets/images/icon-pro.svg" alt="Pro" />
+          Pro $15/mo
+        </button>
+        <div class="flex toggle">
+        </button>  
+          <label for="billing">Monthly</label>
+          <label class="switch"
+            ><input type="checkbox" name="billing" id="billing" />
+            <span class="slider round"></span
+          ></label>
+          <label for="billing">Yearly</label>
+        </button>
+        </div>
       </main>
-      <button type="button" class="buttons">Next Step</button>
+      <div class="btn-footer">
+        <button type="button" class="btn back">Go back</button>
+        <button type="button" class="btn next">Next Step</button>
+      </div>
+    </div>
   </body>
 </html>
