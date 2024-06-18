@@ -14,6 +14,7 @@
   </head>
   <body>
     <div class="flex-container wrapper">
+      <!-- Sidebar start -->
       <header>
         <nav class="flex-container">
           <div class="flex-container">
@@ -21,7 +22,9 @@
               <h2>Step 1</h2>
               <h1>Your info</h1>
             </label>
-            <button class="page-buttons buttons" id="active" name="page-one">1</button>
+            <button class="page-buttons buttons" id="active" name="page-one">
+              1
+            </button>
           </div>
           <div class="flex-container">
             <label for="page-two" class="hidden">
@@ -56,15 +59,33 @@
           alt="illustration.png"
         />
       </header>
-      <!-- Sidebar start -->
-
       <!-- Sidebar end -->
-
       <!-- Step 1 start -->
-
-      Personal info Please provide your name, email address, and phone number.
-      Name e.g. Stephen King Email Address e.g. stephenking@lorem.com Phone
-      Number e.g. +1 234 567 890 Next Step
+      <main>
+        <form action="#" class="flex-container">
+          <div class="form-head">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+          <div class="form-body">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" name="Name" placeholder="e.g. Stephen King" />
+            <label for="Email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              name="Email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+            <label for="Number" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              name="Number"
+              placeholder="e.g. +1 234 567 890"
+            />
+            <button type="button" class="buttons">Next Step</button>
+          </div>
+        </form>
+      </main>
 
       <!-- Step 1 end -->
 
