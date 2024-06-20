@@ -13,206 +13,213 @@
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
-    <div class="flex wrapper">
-      <header class="flex">
-        <img
-          srcset="
-            ./assets/images/bg-sidebar-mobile.svg  375w,
-            ./assets/images/bg-sidebar-desktop.svg 274w
+    <div class="flex center wrapper">
+      <main class="flex main">
+        <header class="flex header">
+          <img
+            srcset="
+              ./assets/images/bg-sidebar-mobile.svg  375w,
+              ./assets/images/bg-sidebar-desktop.svg 274w
+            "
+            sizes="(max-width: 600px) 375px,274px
           "
-          sizes="(max-width: 600px) 375px,274px
-          "
-          src="./assets/images/bg-sidebar-desktop.svg"
-          alt="illustration.png"
-        />
-      </header>
-      <form class="flex" action="#" data-multistepForm>
-        <nav class="flex">
-          <div class="flex">
-            <label for="pg-one" class="hidden">
-              <h2>Step 1</h2>
-              <h1>Your info</h1>
-            </label>
-            <button class="pg-btn btn round" id="active" name="pg-one">
-              1
-            </button>
-          </div>
-          <div class="flex">
-            <label for="pg-two" class="hidden">
-              <h2>Step 2</h2>
-              <h1>Select plan</h1>
-            </label>
-            <button class="pg-btn btn round" name="pg-two">2</button>
-          </div>
-          <div class="flex">
-            <label for="pg-three" class="hidden">
-              <h2>Step 3</h2>
-              <h1>Add-ons</h1>
-            </label>
-            <button class="pg-btn btn round" name="pg-three">3</button>
-          </div>
-          <div class="flex">
-            <label for="pg-four" class="hidden">
-              <h2>Step 4</h2>
-              <h1>Summary</h1>
-            </label>
-            <button class="pg-btn btn round" name="pg-four">4</button>
-          </div>
-        </nav>
-        <main class="flex">
-          <section class="flex section active" data-step1>
-            <div class="section-header">
-              <h1 class="section-header_h1">Personal info</h1>
-              <p class="section-header_p">
-                Please provide your name, email address, and phone number.
-              </p>
+            src="./assets/images/bg-sidebar-desktop.svg"
+            alt="illustration.png"
+          />
+          <nav class="nav flex row">
+            <div class="flex">
+              <label for="pg-one" class="hidden">
+                <h2>Step 1</h2>
+                <h1>Your info</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-one" data-page="1">
+                1
+              </button>
             </div>
-            <div class="section-body flex">
-              <div class="flex">
-                <label for="Name" class="section-body_label">Name</label>
-                <input
-                  class="btn input"
-                  type="text"
-                  name="Name"
-                  placeholder="e.g. Stephen King"
-                />
+            <div class="flex">
+              <label for="pg-two" class="hidden">
+                <h2>Step 2</h2>
+                <h1>Select plan</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-two" data-page="2">
+                2
+              </button>
+            </div>
+            <div class="flex">
+              <label for="pg-three" class="hidden">
+                <h2>Step 3</h2>
+                <h1>Add-ons</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-three" data-page="3">
+                3
+              </button>
+            </div>
+            <div class="flex">
+              <label for="pg-four" class="hidden">
+                <h2>Step 4</h2>
+                <h1>Summary</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-four" data-page="4">
+                4
+              </button>
+            </div>
+          </nav>
+        </header>
+        <form class="flex center form" action="#" data-multistepForm>
+          <main class="flex">
+            <section class="flex section" data-step="1">
+              <div class="section-header">
+                <h1 class="section-header_h1">Personal info</h1>
+                <p class="section-header_p">
+                  Please provide your name, email address, and phone number.
+                </p>
               </div>
-              <div class="flex">
-                <label for="Email" class="section-body_label"
-                  >Email Address</label
-                >
-                <input
-                  class="btn input"
-                  type="email"
-                  name="Email"
-                  placeholder="e.g. stephenking@lorem.com"
-                />
-              </div>
-              <div class="flex">
-                <label for="Number" class="section-body_label"
-                  >Phone Number</label
-                >
-                <input
-                  class="btn input"
-                  type="text"
-                  name="Number"
-                  placeholder="e.g. +1 234 567 890"
-                />
-              </div>
-            </div>
-          </section>
-          <section class="flex section" data-step2>
-            <div class="section-header">
-              <h1>Select your plan</h1>
-              <p>You have the option of monthly or yearly billing.</p>
-            </div>
-            <div class="section-body flex">
-              <label>
-                <input type="checkbox" name="" id="" />
-                <button type="button" class="btn">
-                  <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
-                  <h1>Arcade</h1>
-                  <span class="price">$9/mo</span>
-                </button>
-              </label>
-              <label>
-                <input type="checkbox" name="" id="" />
-                <button type="button" class="btn">
-                  <img src="./assets/images/icon-advanced.svg" alt="Advanced" />
-                  <h1>Advanced</h1>
-                  <span class="price">$12/mo</span>
-                </button>
-              </label>
-              <label>
-                <input type="checkbox" name="" id="" />
-                <button type="button" class="btn">
-                  <img src="./assets/images/icon-pro.svg" alt="Pro" />
-                  <h1>Pro</h1>
-                  <span class="price">$15/mo</span>
-                </button>
-              </label>
-              <div class="flex toggle">
-                <label for="billing">Monthly</label>
-                <label class="switch"
-                  ><input type="checkbox" name="billing" id="billing" />
-                  <span class="slider round"></span
-                ></label>
-                <label for="billing">Yearly</label>
-              </div>
-            </div>
-          </section>
-          <section class="flex section" data-step3>
-            <div class="section-header">
-              <h1 class="section-header_h1">Pick add-ons</h1>
-              <p class="section-header_p">
-                Add-ons help enhance your gaming experience.
-              </p>
-            </div>
-            <div class="section-body">
-              <label>
-                <input type="checkbox" name="" />
-                <h1>Online service</h1>
-                <p>Access to multiplayer games +$1/mo</p>
-                <span class="price">$1/mo</span>
-              </label>
-              <label>
-                <input type="checkbox" name="" />
-                <h1>Larger storage</h1>
-                <p>Extra 1TB of cloud save</p>
-                <span class="price">$2/mo</span>
-              </label>
-              <label>
-                <input type="checkbox" name="" />
-                <h1>Customizable Profile</h1>
-                <p>Custom theme on your profile</p>
-                <span class="price">$2/mo</span>
-              </label>
-            </div>
-          </section>
-          <section class="flex section" data-step4>
-            <div class="section-header">
-              <h1 class="section-header_h1">Finishing up</h1>
-              <p class="section-header_p">
-                Double-check everything looks OK before confirming.
-              </p>
-            </div>
-            <div class="section-body">
-              <div class="flex">
-                <div>
-                  <h1>Arcade (Monthly)</h1>
-                  <a href="">Change</a>
-                  <span>$90/yr</span>
+              <div class="section-body flex">
+                <div class="flex section-body_field">
+                  <label for="Name" class="field-label">Name</label>
+                  <input
+                    class="btn form-input"
+                    type="text"
+                    name="Name"
+                    placeholder="e.g. Stephen King"
+                  />
                 </div>
-                <div>
-                  <h1>Online Service</h1>
-                  <span>+$10/yr</span>
+                <div class="flex section-body_field">
+                  <label for="Email" class="field-label">Email Address</label>
+                  <input
+                    class="btn form-input"
+                    type="email"
+                    name="Email"
+                    placeholder="e.g. stephenking@lorem.com"
+                  />
                 </div>
-                <div>
-                  <h1>Larger Storage</h1>
-                  <span>+$20/yr</span>
+                <div class="flex section-body_field">
+                  <label for="Number" class="field-label">Phone Number</label>
+                  <input
+                    class="btn form-input"
+                    type="text"
+                    name="Number"
+                    placeholder="e.g. +1 234 567 890"
+                  />
                 </div>
               </div>
-              <div class="total flex">
-                <h1>Total (per month/year)</h1>
-                <span>$120/yr</span>
+            </section>
+            <section class="flex section" data-step="2">
+              <div class="section-header">
+                <h1>Select your plan</h1>
+                <p>You have the option of monthly or yearly billing.</p>
               </div>
-            </div>
-          </section>
-          <section class="flex section" data-step5>
-            <img src="./assets/images/icon-thank-you.svg" alt="Thank you" />
-            <h1>Thank you!</h1>
-            <p>
-              Thanks for confirming your subscription! We hope you have fun
-              using our platform. If you ever need support, please feel free to
-              email us at support@loremgaming.com.
-            </p>
-          </section>
-        </main>
-      </form>
-      <div class="btn-footer">
-        <button type="button" class="btn back">Go back</button>
-        <button type="button" class="btn next">Next Step</button>
-      </div>
+              <div class="section-body flex">
+                <label>
+                  <input type="checkbox" name="" id="" />
+                  <button type="button" class="btn">
+                    <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
+                    <h1>Arcade</h1>
+                    <span class="price">$9/mo</span>
+                  </button>
+                </label>
+                <label>
+                  <input type="checkbox" name="" id="" />
+                  <button type="button" class="btn">
+                    <img
+                      src="./assets/images/icon-advanced.svg"
+                      alt="Advanced"
+                    />
+                    <h1>Advanced</h1>
+                    <span class="price">$12/mo</span>
+                  </button>
+                </label>
+                <label>
+                  <input type="checkbox" name="" id="" />
+                  <button type="button" class="btn">
+                    <img src="./assets/images/icon-pro.svg" alt="Pro" />
+                    <h1>Pro</h1>
+                    <span class="price">$15/mo</span>
+                  </button>
+                </label>
+                <div class="flex toggle">
+                  <label for="billing">Monthly</label>
+                  <label class="switch"
+                    ><input type="checkbox" name="billing" id="billing" />
+                    <span class="slider round"></span
+                  ></label>
+                  <label for="billing">Yearly</label>
+                </div>
+              </div>
+            </section>
+            <section class="flex section" data-step="3">
+              <div class="section-header">
+                <h1 class="section-header_h1">Pick add-ons</h1>
+                <p class="section-header_p">
+                  Add-ons help enhance your gaming experience.
+                </p>
+              </div>
+              <div class="section-body">
+                <label>
+                  <input type="checkbox" name="" />
+                  <h1>Online service</h1>
+                  <p>Access to multiplayer games +$1/mo</p>
+                  <span class="price">$1/mo</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="" />
+                  <h1>Larger storage</h1>
+                  <p>Extra 1TB of cloud save</p>
+                  <span class="price">$2/mo</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="" />
+                  <h1>Customizable Profile</h1>
+                  <p>Custom theme on your profile</p>
+                  <span class="price">$2/mo</span>
+                </label>
+              </div>
+            </section>
+            <section class="flex section" data-step="4">
+              <div class="section-header">
+                <h1 class="section-header_h1">Finishing up</h1>
+                <p class="section-header_p">
+                  Double-check everything looks OK before confirming.
+                </p>
+              </div>
+              <div class="section-body">
+                <div class="flex">
+                  <div>
+                    <h1>Arcade (Monthly)</h1>
+                    <a href="">Change</a>
+                    <span>$90/yr</span>
+                  </div>
+                  <div>
+                    <h1>Online Service</h1>
+                    <span>+$10/yr</span>
+                  </div>
+                  <div>
+                    <h1>Larger Storage</h1>
+                    <span>+$20/yr</span>
+                  </div>
+                </div>
+                <div class="total flex">
+                  <h1>Total (per month/year)</h1>
+                  <span>$120/yr</span>
+                </div>
+              </div>
+            </section>
+            <section class="flex section" data-step="5">
+              <img src="./assets/images/icon-thank-you.svg" alt="Thank you" />
+              <h1>Thank you!</h1>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </section>
+          </main>
+        </form>
+        <div class="btn-footer flex row">
+          <button type="button" class="btn back">Go back</button>
+          <button type="button" class="btn next">Next Step</button>
+        </div>
+      </main>
     </div>
     <div class="attribution">
       Challenge by
@@ -220,5 +227,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Malik Bennett</a>.
     </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
