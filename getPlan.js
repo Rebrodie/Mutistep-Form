@@ -1,26 +1,30 @@
-export default function getPlans() {
-  const plans = document.querySelectorAll("[data-plan]");
-  const arcade = plans[0];
-  const advanced = plans[1];
-  const Pro = plans[2];
-
+export default function getPlans(onPlanChange) {
+  const plans = [...document.querySelectorAll("[data-plan]")];
   plans.forEach((plan) => {
     plan.addEventListener("click", () => {
       console.log(plan);
+      plans.forEach((p) => {
+        p.classList.remove("plan-active");
+      });
+      let currentPlan = "";
       if (plan.dataset.plan === "Arcade") {
-        plan.classList.remove("plan-active");
-        plan.classList.add("plan-active");
-        console.log("arcade");
+        plan.classList.toggle("plan-active");
+        currentPlan = "Arcade";
+        console.log(currentPlan);
       } else if (plan.dataset.plan === "Advanced") {
-        plan.classList.remove("plan-active");
-        plan.classList.add("plan-active");
-        console.log("Advanced");
+        plan.classList.toggle("plan-active");
+        currentPlan = "Advanced";
+        console.log(currentPlan);
       } else if (plan.dataset.plan === "Pro") {
-        plan.classList.remove("plan-active");
-        plan.classList.add("plan-active");
-        console.log("Pro");
-      } else if (plan.classList.contains("plan-active")) {
-        plan.classList.remove();
+        plan.classList.toggle("plan-active");
+        currentPlan = "Pro";
+        console.log(currentPlan);
+      }
+      if (onPlanChange) {
+        console.log("called");
+        onPlanChange(currentPlan);
+      } else {
+        console.log("not called");
       }
     });
   });

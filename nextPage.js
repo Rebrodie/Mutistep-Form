@@ -13,17 +13,17 @@ export default function nextStep() {
     ];
   if (currentForm === undefined && currentFormNumber === undefined) {
     currentFormNumber = formNumber[0];
-    currentFormNumber.classList.add("pg-active");
+    currentFormNumber.classList.toggle("pg-active");
     currentForm = form[0];
-    currentForm.classList.add("active");
+    currentForm.classList.toggle("active");
   }
   const next = () => {
     currentForm.classList.remove("active");
     currentFormNumber.classList.remove("pg-active");
     currentForm = form[form.indexOf(currentForm) + 1];
     currentFormNumber = formNumber[formNumber.indexOf(currentFormNumber) + 1];
-    currentForm.classList.add("active");
-    currentFormNumber.classList.add("pg-active");
+    currentForm.classList.toggle("active");
+    currentFormNumber.classList.toggle("pg-active");
   };
   if (!currentForm === form[0]) {
     back.style.display = "block";
