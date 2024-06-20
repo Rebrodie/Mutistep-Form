@@ -48,6 +48,7 @@ body {
 .btn {
   outline: none;
   border: none;
+  background: none;
   padding: 1rem;
 }
 .hidden {
@@ -75,7 +76,6 @@ main.main {
         border-radius: 100%;
         outline: 1px solid var(--clr-White);
         color: var(--clr-White);
-        background: transparent;
       }
       > img {
         flex-basis: 100px;
@@ -116,6 +116,25 @@ main.main {
           justify-content: flex-start;
           gap: 1rem;
           width: 100%;
+          .plan {
+            border-radius: 5px;
+            outline: 0.5px solid var(--clr-lightGray);
+            gap: 1rem;
+            > div {
+              text-align: start;
+              flex-grow: 1;
+              > h1 {
+                color: var(--clr-marineBlue);
+              }
+              > span {
+                color: var(--clr-coolGray);
+              }
+            }
+          }
+          .plan-active {
+            outline-color: var(--clr-purplishBlue);
+            background: hsla(243, 100%, 62%, 0.03);
+          }
           .section-body_field {
             flex-grow: 1;
             .field-label {

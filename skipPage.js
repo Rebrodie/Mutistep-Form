@@ -3,6 +3,7 @@ export default function nextStep() {
   const mainForm = multiStepForm.firstElementChild;
   const form = [...mainForm.querySelectorAll("[data-step]")];
   const nextBtn = [...document.querySelectorAll(".next")][0];
+  const back = [...document.querySelectorAll(".back")][0];
   let currentForm =
     form[form.findIndex((step) => step.classList.contains("active"))];
   let formNumber = [...document.querySelectorAll("[data-page]")];
@@ -23,8 +24,10 @@ export default function nextStep() {
     currentFormNumber = formNumber[formNumber.indexOf(currentFormNumber) + 1];
     currentForm.classList.add("active");
     currentFormNumber.classList.add("pg-active");
-    console.log(currentForm);
   };
+  if (!currentForm === form[0]) {
+    back.style.display = "block";
+  }
   nextBtn.addEventListener("click", () => {
     next();
   });
