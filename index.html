@@ -21,8 +21,7 @@
               ./assets/images/bg-sidebar-mobile.svg  375w,
               ./assets/images/bg-sidebar-desktop.svg 274w
             "
-            sizes="(max-width: 600px) 375px,274px
-          "
+            sizes="(max-width: 600px) 375px, 274px"
             src="./assets/images/bg-sidebar-desktop.svg"
             alt="illustration.png"
           />
@@ -66,8 +65,8 @@
           </nav>
         </header>
         <form class="flex center form" action="#" data-multistepForm>
-          <main class="flex">
-            <section class="flex section" data-step="1">
+          <main class="flex round center">
+            <section class="flex section hidden" data-step="1">
               <div class="section-header">
                 <h1 class="section-header_h1">Personal info</h1>
                 <p class="section-header_p">
@@ -78,7 +77,7 @@
                 <div class="flex section-body_field">
                   <label for="Name" class="field-label">Name</label>
                   <input
-                    class="btn form-input"
+                    class="btn form-input round"
                     type="text"
                     name="Name"
                     placeholder="e.g. Stephen King"
@@ -87,7 +86,7 @@
                 <div class="flex section-body_field">
                   <label for="Email" class="field-label">Email Address</label>
                   <input
-                    class="btn form-input"
+                    class="btn form-input round"
                     type="email"
                     name="Email"
                     placeholder="e.g. stephenking@lorem.com"
@@ -96,7 +95,7 @@
                 <div class="flex section-body_field">
                   <label for="Number" class="field-label">Phone Number</label>
                   <input
-                    class="btn form-input"
+                    class="btn form-input round"
                     type="text"
                     name="Number"
                     placeholder="e.g. +1 234 567 890"
@@ -104,7 +103,7 @@
                 </div>
               </div>
             </section>
-            <section class="flex section active" data-step="2">
+            <section class="flex section hidden active" data-step="2">
               <div class="section-header">
                 <h1>Select your plan</h1>
                 <p>You have the option of monthly or yearly billing.</p>
@@ -112,44 +111,53 @@
               <div class="section-body flex">
                 <button
                   type="button"
-                  class="btn flex row plan"
+                  class="btn flex row plan round"
                   data-plan="Arcade"
                 >
                   <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
                   <div>
                     <h1>Arcade</h1>
-                    <span class="price">$9/mo</span>
+                    <span class="price" data-price="9">$9/mo</span>
                   </div>
                 </button>
                 <button
                   type="button"
-                  class="btn flex row plan"
+                  class="btn flex row plan round"
                   data-plan="Advanced"
                 >
                   <img src="./assets/images/icon-advanced.svg" alt="Advanced" />
                   <div>
                     <h1>Advanced</h1>
-                    <span class="price">$12/mo</span>
+                    <span class="price" data-price="12">$12/mo</span>
                   </div>
                 </button>
-                <button type="button" class="btn flex row plan" data-plan="Pro">
+                <button
+                  type="button"
+                  class="btn flex row plan round"
+                  data-plan="Pro"
+                >
                   <img src="./assets/images/icon-pro.svg" alt="Pro" />
                   <div>
                     <h1>Pro</h1>
-                    <span class="price">$15/mo</span>
+                    <span class="price" data-price="15">$15/mo</span>
                   </div>
                 </button>
-                <div class="flex toggle">
-                  <label for="billing">Monthly</label>
-                  <label class="switch"
-                    ><input type="checkbox" name="billing" id="billing" />
-                    <span class="slider round"></span
-                  ></label>
-                  <label for="billing">Yearly</label>
+                <div class="flex row center toggle round" data-billingToggler>
+                  <label
+                    for="billing"
+                    class="selectedPlan"
+                    data-billing="monthly"
+                    >Monthly</label
+                  >
+                  <label class="switch flex center" data-switch>
+                    <input type="checkbox" name="billing" id="billing" />
+                    <span class="slider round"></span>
+                  </label>
+                  <label for="billing" data-billing="yearly">Yearly</label>
                 </div>
               </div>
             </section>
-            <section class="flex section" data-step="3">
+            <section class="flex section hidden" data-step="3">
               <div class="section-header">
                 <h1 class="section-header_h1">Pick add-ons</h1>
                 <p class="section-header_p">
@@ -177,7 +185,7 @@
                 </label>
               </div>
             </section>
-            <section class="flex section" data-step="4">
+            <section class="flex section hidden" data-step="4">
               <div class="section-header">
                 <h1 class="section-header_h1">Finishing up</h1>
                 <p class="section-header_p">
@@ -206,7 +214,7 @@
                 </div>
               </div>
             </section>
-            <section class="flex section" data-step="5">
+            <section class="flex section hidden" data-step="5">
               <img src="./assets/images/icon-thank-you.svg" alt="Thank you" />
               <h1>Thank you!</h1>
               <p>
@@ -218,7 +226,7 @@
           </main>
         </form>
         <div class="btn-footer flex row">
-          <button type="button" class="btn back">Go back</button>
+          <button type="button" class="btn back hidden">Go back</button>
           <button type="button" class="btn next">Next Step</button>
         </div>
       </main>
