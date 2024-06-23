@@ -208,7 +208,10 @@ form.form > main.flex {
 
 label.switch {
   position: relative;
-  border: solid red;
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 10px;
+  background: var(--clr-marineBlue);
 }
 
 label.switch > input {
@@ -218,14 +221,6 @@ label.switch > input {
 
 label.switch::before {
   content: "";
-  width: 2.5rem;
-  height: 1.25rem;
-  border-radius: 10px;
-  background: var(--clr-marineBlue);
-}
-
-label.switch::after {
-  content: "";
   position: absolute;
   left: 10%;
   top: 50%;
@@ -234,6 +229,11 @@ label.switch::after {
   height: 0.85rem;
   border-radius: 100%;
   background: var(--clr-alabaster);
+  transition: ease-in-out 300ms;
+}
+
+label.switch:has(input:checked)::before {
+  left: 55%;
 }
 
 .btn-footer {
