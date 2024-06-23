@@ -1,4 +1,4 @@
-export default function getPlans(getPlan) {
+export default function getPlans(log) {
   const plans = [...document.querySelectorAll("[data-plan]")];
 
   let currentPlanElement = null;
@@ -8,6 +8,13 @@ export default function getPlans(getPlan) {
 
   const monthly = toggleSection.querySelector("[data-billing='monthly']");
   const yearly = toggleSection.querySelector("[data-billing='yearly']");
+  let isMonthly = true;
+
+  function logPlan(plan, price, isMonthly) {
+    this.plan = plan;
+    this.price = price;
+    this.isMonthly = isMonthly;
+  }
 
   function Plans(planIndex, price, isMonthly) {
     const priceElement = plans[planIndex].querySelector("[data-price]");
@@ -21,34 +28,25 @@ export default function getPlans(getPlan) {
     yearly.classList.toggle("selectedPlan");
   }
 
-  // Function to update prices based on the current billing period
   const updatePlan = () => {
     if (!check.checked) {
       Plans(0, 9, true);
       Plans(1, 12, true);
       Plans(2, 15, true);
+      isMonthly = true;
     } else {
       Plans(0, 90, false);
       Plans(1, 120, false);
       Plans(2, 150, false);
+      isMonthly = false;
     }
     if (currentPlanElement) {
       const price = parseInt(
         currentPlanElement.querySelector("[data-price]").dataset.price
       );
-      logPlan(currentPlanElement.dataset.plan, price);
+      log = new logPlan(currentPlanElement.dataset.plan, price, isMonthly);
     }
   };
-  function logPlan(plan, price) {
-    if (currentPlanElement) {
-      getPlan({
-        plan: plan,
-        price: price,
-      });
-    }
-  }
-  // Initial price update based on the default billing period
-  updatePlan();
 
   check.addEventListener("change", updatePlan);
 
@@ -59,10 +57,10 @@ export default function getPlans(getPlan) {
       const price = parseInt(
         currentPlanElement.querySelector("[data-price]").dataset.price
       );
-      const currentPlan = plan.dataset.plan;
-      console.log("🚀 ~ currentPlan:", currentPlan);
       plan.classList.add("plan-active");
-      logPlan(currentPlan, price);
+      log = new logPlan(currentPlanElement.dataset.plan, price, isMonthly);
     });
   });
+
+  updatePlan();
 }

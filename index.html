@@ -10,6 +10,10 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/6e8e041c9d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
@@ -103,7 +107,7 @@
                 </div>
               </div>
             </section>
-            <section class="flex section hidden active" data-step="2">
+            <section class="flex section hidden" data-step="2">
               <div class="section-header">
                 <h1>Select your plan</h1>
                 <p>You have the option of monthly or yearly billing.</p>
@@ -164,52 +168,60 @@
                   Add-ons help enhance your gaming experience.
                 </p>
               </div>
-              <div class="section-body">
-                <label>
+              <div class="section-body flex">
+                <label class="flex btn row round add-on">
                   <input type="checkbox" name="" />
-                  <h1>Online service</h1>
-                  <p>Access to multiplayer games +$1/mo</p>
-                  <span class="price">$1/mo</span>
+                  <div>
+                    <h1>Online service</h1>
+                    <p>Access to multiplayer games</p>
+                  </div>
+                  <span class="price flex center">$1/mo</span>
                 </label>
-                <label>
+                <label class="flex btn row round add-on">
                   <input type="checkbox" name="" />
-                  <h1>Larger storage</h1>
-                  <p>Extra 1TB of cloud save</p>
-                  <span class="price">$2/mo</span>
+                  <div>
+                    <h1>Larger storage</h1>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+                  <span class="price flex center">$2/mo</span>
                 </label>
-                <label>
+                <label class="flex btn row round add-on">
                   <input type="checkbox" name="" />
-                  <h1>Customizable Profile</h1>
-                  <p>Custom theme on your profile</p>
-                  <span class="price">$2/mo</span>
+                  <div>
+                    <h1>Customizable Profile</h1>
+                    <p>Custom theme on your profile</p>
+                  </div>
+                  <span class="price flex center">$2/mo</span>
                 </label>
               </div>
             </section>
-            <section class="flex section hidden" data-step="4">
+            <section class="flex section hidden active" data-step="4">
               <div class="section-header">
                 <h1 class="section-header_h1">Finishing up</h1>
                 <p class="section-header_p">
                   Double-check everything looks OK before confirming.
                 </p>
               </div>
-              <div class="section-body">
-                <div class="flex">
-                  <div>
-                    <h1>Arcade (Monthly)</h1>
-                    <a href="">Change</a>
+              <div class="section-body flex">
+                <div class="flex summary">
+                  <div class="flex row center">
+                    <div>
+                      <h1>Arcade (Monthly)</h1>
+                      <a href="">Change</a>
+                    </div>
                     <span>$90/yr</span>
                   </div>
-                  <div>
+                  <div class="flex row center">
                     <h1>Online Service</h1>
                     <span>+$10/yr</span>
                   </div>
-                  <div>
+                  <div class="flex row center">
                     <h1>Larger Storage</h1>
                     <span>+$20/yr</span>
                   </div>
                 </div>
-                <div class="total flex">
-                  <h1>Total (per month/year)</h1>
+                <div class="total flex row">
+                  <h1>Total(per month)</h1>
                   <span>$120/yr</span>
                 </div>
               </div>

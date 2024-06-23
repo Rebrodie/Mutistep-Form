@@ -30,7 +30,6 @@ export default function nextStep() {
     currentStepIndex++;
     currentFormNumberIndex++;
     updateFormState();
-    console.log(formSteps[currentStepIndex]);
 
     if (currentStepIndex === 0) {
       backButton.parentElement.style.justifyContent = "flex-end";
@@ -46,7 +45,6 @@ export default function nextStep() {
     currentStepIndex--;
     currentFormNumberIndex--;
     updateFormState();
-    console.log(formSteps[currentStepIndex]);
   };
 
   nextButton.addEventListener("click", nextForm);
