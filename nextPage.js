@@ -1,4 +1,5 @@
-export default function nextStep() {
+export default function nextStep(validator) {
+  const valid = validator();
   const multiStepForm = document.querySelector("[data-multistepForm]");
   const mainForm = multiStepForm.firstElementChild;
   const formSteps = [...mainForm.querySelectorAll("[data-step]")];
@@ -46,7 +47,8 @@ export default function nextStep() {
     currentFormNumberIndex--;
     updateFormState();
   };
-
-  nextButton.addEventListener("click", nextForm);
-  backButton.addEventListener("click", backForm);
+  if (valid) {
+    nextButton.addEventListener("click", nextForm);
+    backButton.addEventListener("click", backForm);
+  }
 }

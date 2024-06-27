@@ -1,4 +1,4 @@
-export default function getPlans(log) {
+export default function getPlans() {
   const plans = [...document.querySelectorAll("[data-plan]")];
 
   let currentPlanElement = null;
@@ -10,11 +10,7 @@ export default function getPlans(log) {
   const yearly = toggleSection.querySelector("[data-billing='yearly']");
   let isMonthly = true;
 
-  function logPlan(plan, price, isMonthly) {
-    this.plan = plan;
-    this.price = price;
-    this.isMonthly = isMonthly;
-  }
+  const nextButton = document.querySelector(".next");
 
   function Plans(planIndex, price, isMonthly) {
     const priceElement = plans[planIndex].querySelector("[data-price]");
