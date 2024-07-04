@@ -60,6 +60,14 @@ body {
   cursor: pointer;
 }
 
+.error {
+  text-wrap: nowrap;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--clr-strawberryRed);
+}
+
 .hidden {
   display: none;
 }
@@ -170,7 +178,12 @@ form.form > main.flex {
 }
 
 .section-body_field {
+  position: relative;
   flex-grow: 1;
+}
+
+.section-body_field_labels {
+  justify-content: space-between;
 }
 
 .field-label {

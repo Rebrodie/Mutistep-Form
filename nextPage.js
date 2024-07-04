@@ -1,5 +1,4 @@
 export default function nextStep(validator) {
-  const valid = validator();
   const multiStepForm = document.querySelector("[data-multistepForm]");
   const mainForm = multiStepForm.firstElementChild;
   const formSteps = [...mainForm.querySelectorAll("[data-step]")];
@@ -26,12 +25,7 @@ export default function nextStep(validator) {
     formNumbers[currentFormNumberIndex].classList.toggle("pg-active");
   };
 
-  const nextForm = () => {
-    updateFormState();
-    currentStepIndex++;
-    currentFormNumberIndex++;
-    updateFormState();
-
+  const checkCurrentStep = () => {
     if (currentStepIndex === 0) {
       backButton.parentElement.style.justifyContent = "flex-end";
       backButton.classList.toggle("hidden");
@@ -41,14 +35,26 @@ export default function nextStep(validator) {
     }
   };
 
-  const backForm = () => {
-    updateFormState();
-    currentStepIndex--;
-    currentFormNumberIndex--;
-    updateFormState();
+  const next = (action) => {
+    return function next() {
+      if (action === "next") {
+        if (validator() === true) {
+          updateFormState();
+          currentStepIndex++;
+          currentFormNumberIndex++;
+          updateFormState();
+          checkCurrentStep();
+        }
+      } else if (action === "back") {
+        updateFormState();
+        currentStepIndex--;
+        currentFormNumberIndex--;
+        updateFormState();
+        checkCurrentStep();
+      }
+    };
   };
-  if (valid) {
-    nextButton.addEventListener("click", nextForm);
-    backButton.addEventListener("click", backForm);
-  }
+
+  nextButton.addEventListener("click", next("next"));
+  backButton.addEventListener("click", next("back"));
 }
