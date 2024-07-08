@@ -68,7 +68,12 @@
             </div>
           </nav>
         </header>
-        <form class="flex center form" action="#" data-multistepForm>
+        <form
+          class="flex center form"
+          action="results.html"
+          method="GET"
+          data-multistepForm
+        >
           <main class="flex round center">
             <section class="flex section hidden" data-step="1">
               <div class="section-header">
@@ -80,7 +85,7 @@
               <div class="section-body flex">
                 <div class="flex section-body_field">
                   <div class="flex row section-body_field_labels">
-                    <label for="Name" class="field-label">Name</label>
+                    <label for="name" class="field-label">Name</label>
                   </div>
                   <input
                     class="btn form-input round"
@@ -92,7 +97,7 @@
                 </div>
                 <div class="flex section-body_field">
                   <div class="flex row section-body_field_labels">
-                    <label for="Email" class="field-label">Email Address</label>
+                    <label for="email" class="field-label">Email Address</label>
                   </div>
                   <input
                     class="btn form-input round"
@@ -104,14 +109,14 @@
                 </div>
                 <div class="flex section-body_field">
                   <div class="flex row section-body_field_labels">
-                    <label for="Number" class="field-label">Phone Number</label>
+                    <label for="number" class="field-label">Phone Number</label>
                   </div>
                   <input
                     class="btn form-input round"
-                    type="text"
+                    type="number"
                     name="Phone Number"
                     id="number"
-                    placeholder="e.g. +1 234 567 890"
+                    placeholder="e.g. 234567890"
                   />
                 </div>
               </div>
@@ -122,51 +127,55 @@
                 <p>You have the option of monthly or yearly billing.</p>
               </div>
               <div class="section-body flex">
-                <button
-                  type="button"
-                  class="btn flex row plan round"
-                  data-plan="Arcade"
-                >
+                <label class="btn flex row plan round" data-plan="Arcade">
+                  <input
+                    type="radio"
+                    name="dataPlan"
+                    id="arcade"
+                    value=""
+                    data-price
+                  />
                   <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
                   <div>
                     <h1>Arcade</h1>
-                    <span class="price" data-price="9">$9/mo</span>
+                    <span class="price">$9/mo</span>
                   </div>
-                </button>
-                <button
-                  type="button"
-                  class="btn flex row plan round"
-                  data-plan="Advanced"
-                >
+                </label>
+                <label class="btn flex row plan round" data-plan="Advanced">
+                  <input
+                    type="radio"
+                    name="dataPlan"
+                    id="advanced"
+                    value="12"
+                    data-price
+                  />
                   <img src="./assets/images/icon-advanced.svg" alt="Advanced" />
                   <div>
                     <h1>Advanced</h1>
-                    <span class="price" data-price="12">$12/mo</span>
+                    <span class="price">$12/mo</span>
                   </div>
-                </button>
-                <button
-                  type="button"
-                  class="btn flex row plan round"
-                  data-plan="Pro"
-                >
+                </label>
+                <label class="btn flex row plan round" data-plan="Pro">
+                  <input
+                    type="radio"
+                    name="dataPlan"
+                    id="pro"
+                    value="15"
+                    data-price
+                  />
                   <img src="./assets/images/icon-pro.svg" alt="Pro" />
                   <div>
                     <h1>Pro</h1>
-                    <span class="price" data-price="15">$15/mo</span>
+                    <span class="price">$15/mo</span>
                   </div>
-                </button>
+                </label>
                 <div class="flex row center toggle round" data-billingToggler>
                   <label for="billing" data-billing="monthly">Monthly</label>
                   <label class="switch flex center" data-switch>
                     <input type="checkbox" name="billing" id="billing" />
                     <span class="slider round"></span>
                   </label>
-                  <label
-                    for="billing"
-                    data-billing="yearly"
-                    class="selectedPlan"
-                    >Yearly</label
-                  >
+                  <label for="billing" data-billing="yearly">Yearly</label>
                 </div>
               </div>
             </section>
@@ -178,8 +187,8 @@
                 </p>
               </div>
               <div class="section-body flex">
-                <label class="flex btn row round add-on">
-                  <input type="checkbox" name="" />
+                <label class="flex btn row round add-on" data-addOn="">
+                  <input type="checkbox" name="online" />
                   <div>
                     <h1>Online service</h1>
                     <p>Access to multiplayer games</p>
@@ -187,7 +196,7 @@
                   <span class="price flex center">$1/mo</span>
                 </label>
                 <label class="flex btn row round add-on">
-                  <input type="checkbox" name="" />
+                  <input type="checkbox" name="storage" />
                   <div>
                     <h1>Larger storage</h1>
                     <p>Extra 1TB of cloud save</p>
@@ -195,7 +204,7 @@
                   <span class="price flex center">$2/mo</span>
                 </label>
                 <label class="flex btn row round add-on">
-                  <input type="checkbox" name="" />
+                  <input type="checkbox" name="customize" />
                   <div>
                     <h1>Customizable Profile</h1>
                     <p>Custom theme on your profile</p>
@@ -235,21 +244,13 @@
                 </div>
               </div>
             </section>
-            <section class="flex section hidden" data-step="5">
-              <img src="./assets/images/icon-thank-you.svg" alt="Thank you" />
-              <h1>Thank you!</h1>
-              <p>
-                Thanks for confirming your subscription! We hope you have fun
-                using our platform. If you ever need support, please feel free
-                to email us at support@loremgaming.com.
-              </p>
-            </section>
           </main>
+          <div class="btn-footer flex row" id="buttons">
+            <button type="button" class="btn back hidden">Go back</button>
+            <button type="button" class="btn next">Next Step</button>
+            <button type="submit" class="btn submit hidden">Confirm</button>
+          </div>
         </form>
-        <div class="btn-footer flex row">
-          <button type="button" class="btn back hidden">Go back</button>
-          <button type="button" class="btn next">Next Step</button>
-        </div>
       </main>
     </div>
     <div class="attribution">

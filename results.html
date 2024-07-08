@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/6e8e041c9d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="flex center wrapper">
+      <main class="flex main">
+        <header class="flex header">
+          <img
+            srcset="
+              ./assets/images/bg-sidebar-mobile.svg  375w,
+              ./assets/images/bg-sidebar-desktop.svg 274w
+            "
+            sizes="(max-width: 600px) 375px, 274px"
+            src="./assets/images/bg-sidebar-desktop.svg"
+            alt="illustration.png"
+          />
+          <nav class="nav flex row">
+            <div class="flex">
+              <label for="pg-one" class="hidden">
+                <h2>Step 1</h2>
+                <h1>Your info</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-one" data-page="1">
+                1
+              </button>
+            </div>
+            <div class="flex">
+              <label for="pg-two" class="hidden">
+                <h2>Step 2</h2>
+                <h1>Select plan</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-two" data-page="2">
+                2
+              </button>
+            </div>
+            <div class="flex">
+              <label for="pg-three" class="hidden">
+                <h2>Step 3</h2>
+                <h1>Add-ons</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-three" data-page="3">
+                3
+              </button>
+            </div>
+            <div class="flex">
+              <label for="pg-four" class="hidden">
+                <h2>Step 4</h2>
+                <h1>Summary</h1>
+              </label>
+              <button class="pg-btn btn round" name="pg-four" data-page="4">
+                4
+              </button>
+            </div>
+          </nav>
+        </header>
+        <main class="flex round center">
+          <section class="flex section hidden" data-step="5">
+            <img src="./assets/images/icon-thank-you.svg" alt="Thank you" />
+            <h1>Thank you!</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free
+              to email us at support@loremgaming.com.
+            </p>
+          </section>
+        </main>
+      </main>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Malik Bennett</a>.
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -115,13 +115,12 @@ nav.nav > img {
 
 form.form {
   position: absolute;
-  left: 50%;
-  top: 15vh;
-  transform: translate(-50%);
-  width: min(92%, 450px);
+  width: 100%;
+  height: 100vh;
 }
 
 form.form > main.flex {
+  width: min(92%, 450px);
   padding: 2rem 1.5rem;
   background: var(--clr-White);
 }
@@ -309,10 +308,11 @@ label.add-on:has(input:checked) {
   color: var(--clr-marineBlue);
 }
 .btn-footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   padding: 0.95rem;
   background-color: var(--clr-White);
-  margin-top: auto;
   justify-content: flex-end;
 }
 
@@ -320,13 +320,22 @@ label.add-on:has(input:checked) {
   flex-wrap: nowrap;
   font-weight: 900;
   border-radius: 5px;
-  background: var(--clr-marineBlue);
   color: var(--clr-White);
+  background: var(--clr-marineBlue);
 }
 
 .back {
+  border-radius: 5px;
   font-weight: 900;
   color: var(--clr-coolGray);
+}
+
+.submit {
+  flex-wrap: nowrap;
+  font-weight: 900;
+  border-radius: 5px;
+  color: var(--clr-White);
+  background: var(--clr-purplishBlue);
 }
 
 .attribution {
