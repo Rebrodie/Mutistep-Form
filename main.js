@@ -36,9 +36,17 @@ const Valuables = {
   },
 };
 
+const arcade = document.getElementById("arcade");
+const advanced = document.getElementById("advanced");
+const pro = document.getElementById("pro");
+
+const online = document.getElementById("online");
+const storage = document.getElementById("storage");
+const custom = document.getElementById("custom");
+
+let isMonthly = true;
+
 const check = document.getElementById("billing");
 
-
-
-check.addEventListener("change", updatePrice);
+check.addEventListener("change", updatePrice(isMonthly));
 page();

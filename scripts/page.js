@@ -11,6 +11,7 @@ export default function skipPage() {
   let currentStepIndex = formSteps.findIndex((step) =>
     step.classList.contains("active")
   );
+
   let formNumbers = [...document.querySelectorAll("[data-page]")];
   let currentFormNumberIndex = formNumbers.findIndex((step) =>
     step.classList.contains("pg-active")

@@ -132,7 +132,7 @@
                     type="radio"
                     name="dataPlan"
                     id="arcade"
-                    value=""
+                    value="9"
                     data-price
                   />
                   <img src="/assets/images/icon-arcade.svg" alt="Arcade" />
@@ -170,7 +170,12 @@
                   </div>
                 </label>
                 <div class="flex row center toggle round" data-billingToggler>
-                  <label for="billing" data-billing="monthly">Monthly</label>
+                  <label
+                    for="billing"
+                    class="selectedPricing"
+                    data-billing="monthly"
+                    >Monthly</label
+                  >
                   <label class="switch flex center" data-switch>
                     <input type="checkbox" name="billing" id="billing" />
                     <span class="slider round"></span>
@@ -187,24 +192,34 @@
                 </p>
               </div>
               <div class="section-body flex">
-                <label class="flex btn row round add-on" data-addOn="">
-                  <input type="checkbox" name="online" />
+                <label class="flex btn row round add-on" data-addOn>
+                  <input type="checkbox" id="online" vlaue="1" name="online" />
                   <div>
                     <h1>Online service</h1>
                     <p>Access to multiplayer games</p>
                   </div>
                   <span class="price flex center">$1/mo</span>
                 </label>
-                <label class="flex btn row round add-on">
-                  <input type="checkbox" name="storage" />
+                <label class="flex btn row round add-on" data-addOn>
+                  <input
+                    type="checkbox"
+                    id="storage"
+                    value="2"
+                    name="storage"
+                  />
                   <div>
                     <h1>Larger storage</h1>
                     <p>Extra 1TB of cloud save</p>
                   </div>
                   <span class="price flex center">$2/mo</span>
                 </label>
-                <label class="flex btn row round add-on">
-                  <input type="checkbox" name="customize" />
+                <label class="flex btn row round add-on" data-addOn>
+                  <input
+                    type="checkbox"
+                    id="custom"
+                    value="2"
+                    name="customize"
+                  />
                   <div>
                     <h1>Customizable Profile</h1>
                     <p>Custom theme on your profile</p>
